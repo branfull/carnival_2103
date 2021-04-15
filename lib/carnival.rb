@@ -41,4 +41,12 @@ class Carnival
       attendee.spending_money < ride.cost
     end
   end
+
+  def draw_lottery_winner(ride)
+    if lottery_ticket_contestants(ride).empty?
+      nil
+    else
+      lottery_ticket_contestants(ride).sample.name
+    end
+  end
 end

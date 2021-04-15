@@ -164,8 +164,9 @@ RSpec.describe Carnival do
     jeffco_fair.admit(sally)
     jeffco_fair.admit(johnny)
     it 'returns a list of attendees interested in a ride without enough money' do
-      allow(jeffco_fair).to receive(:rand) do
-        "Bob"
+      # I clearly don't have a firm grasp on how to stub
+      allow(jeffco_fair).to receive(:sample) do
+        bob
       end
       expected = "Bob"
       expect(jeffco_fair.draw_lottery_winner(bumper_cars)).to eq(expected)
