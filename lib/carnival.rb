@@ -21,4 +21,10 @@ class Carnival
   def admit(attendee)
     @attendees.push(attendee)
   end
+
+  def list_of_attendees_for_ride(ride)
+    @attendees.find_all do |attendee|
+      attendee.interests.include?(ride.name)
+    end
+  end
 end
